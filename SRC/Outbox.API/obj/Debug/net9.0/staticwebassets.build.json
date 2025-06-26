@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "vk/HeRlg9YXAIw4C4Ll2mYqapsYUPQG6aXk0q37p1YI=",
+  "Source": "Outbox.API",
+  "BasePath": "_content/Outbox.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
