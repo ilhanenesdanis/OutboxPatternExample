@@ -10,3 +10,4 @@
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/ServiceDefaults/obj/Debug/net9.0/refint/ServiceDefaults.dll
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/ServiceDefaults/obj/Debug/net9.0/ServiceDefaults.pdb
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/ServiceDefaults/obj/Debug/net9.0/ref/ServiceDefaults.dll
+/Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/ServiceDefaults/obj/Debug/net9.0/ServiceDefaults.sourcelink.json

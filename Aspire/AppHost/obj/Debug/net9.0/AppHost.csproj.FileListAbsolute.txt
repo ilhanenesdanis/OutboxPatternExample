@@ -171,3 +171,4 @@
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/AppHost/obj/Debug/net9.0/AppHost.pdb
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/AppHost/obj/Debug/net9.0/AppHost.genruntimeconfig.cache
 /Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/AppHost/obj/Debug/net9.0/ref/AppHost.dll
+/Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/Aspire/AppHost/obj/Debug/net9.0/AppHost.sourcelink.json
