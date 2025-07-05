@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mesalaGmF/Q=",
+  "dgSpecHash": "20RUFl3QrKo=",
   "success": true,
   "projectFilePath": "/Users/ilhanenesdanis/Desktop/DotnetProjects/OutboxPatternExample/SRC/Outbox.API/Outbox.API.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "/Users/ilhanenesdanis/.nuget/packages/azure.core/1.46.0/azure.core.1.46.0.nupkg.sha512",
     "/Users/ilhanenesdanis/.nuget/packages/azure.identity/1.13.2/azure.identity.1.13.2.nupkg.sha512",
     "/Users/ilhanenesdanis/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/ilhanenesdanis/.nuget/packages/mapster/7.4.0/mapster.7.4.0.nupkg.sha512",
+    "/Users/ilhanenesdanis/.nuget/packages/mapster.core/1.2.1/mapster.core.1.2.1.nupkg.sha512",
     "/Users/ilhanenesdanis/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
     "/Users/ilhanenesdanis/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "/Users/ilhanenesdanis/.nuget/packages/microsoft.bcl.cryptography/9.0.4/microsoft.bcl.cryptography.9.0.4.nupkg.sha512",

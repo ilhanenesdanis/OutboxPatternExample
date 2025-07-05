@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Outbox.API.Context;
 
@@ -11,9 +12,11 @@ using Outbox.API.Context;
 namespace Outbox.API.Migrations
 {
     [DbContext(typeof(OutboxContext))]
-    partial class OutboxContextModelSnapshot : ModelSnapshot
+    [Migration("20250705065812_orderdate")]
+    partial class orderdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +36,9 @@ namespace Outbox.API.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2025, 7, 5, 9, 58, 12, 450, DateTimeKind.Local).AddTicks(9190));
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -54,38 +59,6 @@ namespace Outbox.API.Migrations
                     b.HasIndex("CustomerEmail", "Id");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("Outbox.API.Models.OrderOutbox", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ComplatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FailMessage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsComplated")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsFailed")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("LastAttempt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderOutbox");
                 });
 #pragma warning restore 612, 618
         }

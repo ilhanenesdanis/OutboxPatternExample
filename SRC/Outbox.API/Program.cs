@@ -1,5 +1,8 @@
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using Outbox.API.Context;
+using Outbox.API.Dto;
+using Outbox.API.Models;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,8 +22,6 @@ builder.Services.AddOpenTelemetry()
 .WithLogging()
 .WithMetrics()
 .WithTracing(tracing => tracing.AddSource("Outbox"));
-
-
 
 var app = builder.Build();
 
@@ -51,6 +52,31 @@ app.UseCors(x =>
 
 app.UseHttpsRedirection();
 
+app.MapPost("/orders", async (CreateOrderDto request, OutboxContext context, CancellationToken token) =>
+{
+    Order order = request.Adapt<Order>();
+
+    await context.Orders.AddAsync(order);
+
+    OrderOutbox orderOutbox = new OrderOutbox()
+    {
+        CreatedAt = DateTime.Now,
+        OrderId = order.Id,
+    };
+    await context.OrderOutbox.AddAsync(orderOutbox);
+
+    await context.SaveChangesAsync(cancellationToken: token);
+
+    return Results.Ok();
+});
+
+
+app.MapGet("orders", async (OutboxContext context, CancellationToken token) =>
+{
+    List<Order> orders = await context.Orders.ToListAsync(token);
+
+    return Results.Ok(orders);
+});
 
 app.Run();
 

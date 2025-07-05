@@ -11,7 +11,7 @@ public sealed class OutboxContext : DbContext
     }
 
     public DbSet<Order> Orders { get; set; }
-
+    public DbSet<OrderOutbox>  OrderOutbox { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Order>(opt =>
@@ -21,8 +21,11 @@ public sealed class OutboxContext : DbContext
 
             opt.Property(x => x.ProductName).HasColumnType("nvarchar(50)");
             opt.Property(x => x.CustomerEmail).IsRequired().HasColumnType("nvarchar(50)");
-            
 
+        });
+        modelBuilder.Entity<OrderOutbox>(opt =>
+        {
+            opt.HasKey(x => x.Id);
         });
 
     }
