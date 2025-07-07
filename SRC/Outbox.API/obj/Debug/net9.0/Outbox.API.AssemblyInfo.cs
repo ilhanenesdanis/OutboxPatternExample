@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Outbox.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8c49c0439339da7198aab3dbc7998895ca02451")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54fcf3200de00ad4e3a1e6d36459873578509e7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Outbox.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Outbox.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

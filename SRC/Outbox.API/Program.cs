@@ -1,5 +1,6 @@
 using Mapster;
 using Microsoft.EntityFrameworkCore;
+using Outbox.API.BackgroundServices;
 using Outbox.API.Context;
 using Outbox.API.Dto;
 using Outbox.API.Models;
@@ -17,6 +18,8 @@ builder.Services.AddDbContext<OutboxContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("database"));
 });
+
+builder.Services.AddHostedService<OrderBackgroundService>();
 
 builder.Services.AddOpenTelemetry()
 .WithLogging()
@@ -41,6 +44,7 @@ if (app.Environment.IsDevelopment())
 }
 
 DbInitializer.ApplyMigration(app.Services);
+
 
 app.UseCors(x =>
 {

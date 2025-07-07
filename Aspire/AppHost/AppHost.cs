@@ -4,8 +4,9 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var sqlPassword = builder.AddParameter("sql-password", secret: true);
 
-var sql = builder.AddSqlServer("sql", password: sqlPassword)
+var sql = builder.AddSqlServer("sql", password: sqlPassword, port: 1433)
 .WithLifetime(ContainerLifetime.Persistent)
+
 .WithDataVolume();
 
 var db = sql.AddDatabase("database");
